@@ -14,7 +14,7 @@ ENV KUBECTL_VERSION=${KUBECTL_VERSION} \
 
 WORKDIR /app
 
-RUN apk add --no-cache curl jq && \
+RUN apk add --no-cache bash curl jq && \
     curl -L https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl -o /usr/local/bin/kubectl && \
     chmod +x /usr/local/bin/kubectl && \
     curl -L https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize/v${KUSTOMIZE_VERSION}/kustomize_kustomize.v${KUSTOMIZE_VERSION}_linux_amd64 -o /usr/local/bin/kustomize && \
